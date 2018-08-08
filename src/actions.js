@@ -41,4 +41,4 @@ function thumbDownComment(id){
 	}
 }
 
-export { addComment };
+export { addComment, thumbUpComment };

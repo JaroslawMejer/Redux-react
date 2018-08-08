@@ -39,7 +39,7 @@ function comments(state = initialState, action) {
 		case THUMB_UP_COMMENT:
 			return {
 				...state,
-				comments: state.comments.map(comment => {
+				list: state.list.map(comment => {
 					if (comment.id == action.id){
 						return {
 							...comment,
