@@ -1,13 +1,17 @@
 import uuid from 'uuid'
 import {ADD_COMMENT, REMOVE_COMMENT, EDIT_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT} from './actions'
 
-function comments(state = [], action) {
+const initialState = {
+  list: []
+}
+
+function comments(state = initialState, action) {
 	switch(action.type) {
 		case ADD_COMMENT:
 			return  {
 				...state,
-				comments: [
-					...state.comments,
+				list: [
+					...state.list,
 					{
 						id: uuid.v4(),
 						text: action.text,
