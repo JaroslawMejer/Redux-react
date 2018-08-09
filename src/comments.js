@@ -46,18 +46,20 @@ function comments(state = initialState, action) {
 							votes: comment.votes + 1
 						}
 					}
+					return comment
 				})
 			}
 		case THUMB_DOWN_COMMENT:
 			return {
 				...state,
-				comments: state.comments.map(comment => {
+				list: state.list.map(comment => {
 					if (comment.id == action.id){
 						return {
 							...comment,
 							votes: comment.votes - 1
 						}
 					}
+					return comment
 				})
 			}
 		default:
